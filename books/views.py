@@ -18,4 +18,4 @@ class BookModelViewSet(viewsets.ModelViewSet):
     serializer_class = BookModelSerializer
     filter_backends = [RQLFilterBackend]
     rql_filter_class = BookFilterClass
-    permission_classes = [permissions.DjangoModelPermissions, BookOwnerPermission,]
+    permission_classes = [permissions.IsAuthenticated, permissions.DjangoModelPermissions, BookOwnerPermission,]
